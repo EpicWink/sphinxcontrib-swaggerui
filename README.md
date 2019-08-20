@@ -5,12 +5,12 @@ your OpenAPI specification document.
 
 ## Sphinx Directive swaggerui
 
-When using for the first time, the following sample shows the configura:
+Use the following sample configuration when testing the directive for the first time:
 
-.. swaggerui:: ../_static/swagger/petstore.yaml                                 # *) Required
-   :url: https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js               # *) Required
-   :css: ../_static/swagger/swagger-ui.css                                      # *) Required
-   :script: https://unpkg.com/swagger-ui-dist@3/swagger-ui-standalone-preset.js # Optional
+    .. swaggerui:: ../_static/swagger/petstore.yaml                                 # *) Required
+       :url: https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js               # *) Required
+       :css: ../_static/swagger/swagger-ui.css                                      # *) Required
+       :script: https://unpkg.com/swagger-ui-dist@3/swagger-ui-standalone-preset.js # Optional
 
 An attribute (for example, ../_static/swagger/petstore.yaml) refers to your local YUML or JSON file in
 the OpenAPI format.
