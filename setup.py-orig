@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+
+import setuptools
+
+DISTUTILS_DEBUG = "1"
+
+setuptools.setup(
+    version="0.0.1",
+    setup_requires=['pbr'],
+    pbr=True,
+)
