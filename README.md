@@ -5,6 +5,20 @@ your OpenAPI specification document.
 
 ## Sphinx Directive swaggerui
 
+### Installation
+
+    $ pip install sphinxcontrib-swaggerui
+
+### Configuration
+
+In your project config.py, add the installed extension:
+
+    extensions = [...,
+        'sphinxcontrib.swaggerui',
+        ...]
+
+### Directive in reST Files
+
 Use the following sample configuration when testing the directive for the first time:
 
     .. swaggerui:: ../_static/swagger/petstore.yaml                                 # *) Required
