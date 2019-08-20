@@ -1,0 +1,23 @@
+<div id="swagger-ui"></div>
+<link rel="stylesheet" href=css-path type="text/css" />
+<script src=swagger-url></script>
+<script src=opt-script></script>
+<script>
+   window.onload = function() {
+   const ui = SwaggerUIBundle({
+     url: url,
+     dom_id: "#swagger-ui",
+     defaultModelsExpandDepth: -1, // Hides the Schemas section at the API Document bottom
+     deepLinking: true,
+     presets: [
+       SwaggerUIBundle.presets.apis,
+       SwaggerUIStandalonePreset
+     ],
+     plugins: [
+       SwaggerUIBundle.plugins.DownloadUrl
+     ],
+     layout: "StandaloneLayout"
+   })
+   window.ui = ui
+   }
+</script>

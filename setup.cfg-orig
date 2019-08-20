@@ -1,0 +1,49 @@
+[metadata]
+name = sphinxcontrib-swaggerui
+version = 0.0.1
+summary = Provides the swaggerui directive for reST files to build an interactive HTML page with your OpenAPI specification document.
+description-file =
+    README.rst
+author = Albert Bagdasaryan
+author-email = albert.bagd@gmail.com
+home-page = http://www.sphinx-doc.org/
+classifier =
+    Development Status :: 3 - Alpha
+    Environment :: Console
+    Framework :: Sphinx :: Extension
+    Intended Audience :: Developers
+    License :: OSI Approved :: Apache Software License
+    Operating System :: OS Independent
+    Programming Language :: Python
+    Programming Language :: Python :: 3
+    Programming Language :: Python :: 3.5
+    Programming Language :: Python :: 3.6
+    Programming Language :: Python :: 3.7
+    Topic :: Documentation
+    Topic :: Utilities
+
+[global]
+setup-hooks =
+    pbr.hooks.setup_hook
+
+[files]
+packages =
+    sphinxcontrib
+namespace_packages =
+    sphinxcontrib
+
+[wheel]
+universal = 1
+
+[mypy]
+python_version = 3.6
+show_column_numbers = True
+show_error_context = True
+ignore_missing_imports = True
+follow_imports = skip
+incremental = True
+check_untyped_defs = True
+warn_unused_ignores = True
+
+[flake8]
+show-source = True
