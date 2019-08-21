@@ -38,6 +38,7 @@ output/*/index.html
 
 # Sphinx
 doc/build
+_build
 
 # pbr
 AUTHORS
