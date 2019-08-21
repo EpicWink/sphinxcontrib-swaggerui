@@ -10,7 +10,7 @@
 """
 
 import pbr.version
-from sphinxcontrib import swaggerui
+from sphinxcontrib.swaggerui import swaggerui
 
 if False:
     # For type annotations
