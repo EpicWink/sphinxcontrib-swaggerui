@@ -32,6 +32,6 @@ the OpenAPI format.
 The directive uses the following options:
 
 *   ``url`` refers to a CDN-based (Content Delivery Network) Swagger-UI package.
-*   ``css`` refers to a local Swagger-UI CSS file. This package contains a CSS file copied to the ``_static/swagger``
+*   ``css`` refers to a local Swagger-UI CSS file. This package contains a CSS file copied to the ``_static/swaggerui/``
     folder during the first activation of the extension by Sphinx.
 *   ``script`` refers to the additional script (the one in the above example is recommended).
