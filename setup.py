@@ -5,7 +5,7 @@ import setuptools
 
 setuptools.setup(
     name="sphinxcontrib-swaggerui",
-    version="0.0.3",
+    version="0.0.6",
     description="Provides the swaggerui directive for reST files to build an interactive HTML page with your OpenAPI specification document.",
     long_description="README.md",
     license='BSD',

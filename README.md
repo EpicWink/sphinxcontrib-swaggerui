@@ -1,5 +1,6 @@
-Provides the swaggerui directive for reST files to build an interactive driven by Swagger-UI panel presenting
-your OpenAPI specification document.
+Provides the swaggerui directive for reST files to build an interactive driven
+by [Swagger-UI](https://swagger.io/tools/swagger-ui/) panel presenting
+your [OpenAPI](https://swagger.io/resources/open-api/) specification document.
 
 ---
 
@@ -11,11 +12,16 @@ your OpenAPI specification document.
 
 ### Configuration
 
-In your project config.py, add the installed extension:
+In your project **config.py**, add the installed extension:
 
     extensions = [...,
         'sphinxcontrib.swaggerui',
         ...]
+
+The directive also implies that you use the static content in the **_static/** folder and this is configured as:
+
+    html_static_path = ['_static']
+
 
 ### Directive in reST Files
 
@@ -26,12 +32,22 @@ Use the following sample configuration when testing the directive for the first 
        :css: ../_static/swagger/swagger-ui.css                                      # *) Required
        :script: https://unpkg.com/swagger-ui-dist@3/swagger-ui-standalone-preset.js # Optional
 
-An attribute (for example, ../_static/swagger/petstore.yaml) refers to your local YUML or JSON file in
-the OpenAPI format.
+An attribute (for example, **../_static/swagger/petstore.yaml**) refers to your local YAML or JSON file in
+the OpenAPI format. The path must be relative to the document containing this directive.
 
 The directive uses the following options:
 
-*   ``url`` refers to a CDN-based (Content Delivery Network) Swagger-UI package.
-*   ``css`` refers to a local Swagger-UI CSS file. This package contains a CSS file copied to the ``_static/swaggerui/``
-    folder during the first activation of the extension by Sphinx.
-*   ``script`` refers to the additional script (the one in the above example is recommended).
+*   **url** refers to a CDN-based (Content Delivery Network) Swagger-UI package.
+*   **css** refers to a local Swagger-UI CSS file. The path must be relative to the document containing the directive.
+*   **script** refers to the additional script (the one in the above example is recommended).
+
+
+This package contains **petstore.yaml** and **swagger-ui.css** files (mentioned in the above example)
+copied to the **_static/swaggerui/** folder during the first use of the directive by Sphinx.
+So don't care about copying these files when you specify the relative path to that folder;
+the sample files will appear automatically in it whether you use them or not.
+
+## Links
+
+*   Source: [Bitbucket](https://bitbucket.org/albert_bagdasaryan/sphinxcontrib-swaggerui/)
+*   Bugs and issues: [Issues](https://github.com/sphinx-contrib/sphinxcontrib-swaggerui/issues)

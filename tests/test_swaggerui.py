@@ -8,12 +8,19 @@
     :license: BSD, see LICENSE for details.
 """
 
-import pytest
 
-from sphinxcontrib.swaggerui import swaggerui
+def test_functional(tmpdir, run_sphinx):
 
-@pytest.mark.sphinx
-class TestSwaggerUI(object):
 
-    def test_basic(self):
-        pass
+    spec = '_static/swaggerui/petstore.yaml'
+
+    run_sphinx(spec, options={
+        'url': 'https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js',
+        'css': '_static/swaggerui/swagger-ui.css',
+        'script': 'https://unpkg.com/swagger-ui-dist@3/swagger-ui-standalone-preset.js'
+    })
+
+    rendered_html = tmpdir.join('out', 'index.html').read_text('utf-8')
+
+    assert '<div id="swagger-ui"></div>' in rendered_html
+
