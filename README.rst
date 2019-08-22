@@ -54,9 +54,13 @@ the OpenAPI format. The path must be relative to the document containing the dir
 
 The directive uses the following options:
 
-*  ``url`` refers to a CDN-based (Content Delivery Network) Swagger-UI package.
+*  ``url`` refers to a CDN-based (Content Delivery Network) Swagger-UI package. For a proper version of the script, refer
+   to the `UNPKG <https://unpkg.com/browse/swagger-ui-dist/>`_ CDN. The script name must be ``swagger-ui-bundle.js``.
 *  ``css`` refers to a local Swagger-UI CSS file. The path must be relative to the document containing the directive.
-*  ``script`` refers to an additional script (the one in the above example is recommended).
+   You can find a proper CSS file in the `UNPKG <https://unpkg.com/browse/swagger-ui-dist/>`_ CDN.
+*  ``script`` refers to an additional script (the one in the above example is recommended). For a proper version of the script, refer
+    to the `UNPKG <https://unpkg.com/browse/swagger-ui-dist/>`_ CDN. The script name must be ``swagger-ui-standalone-preset.js``.
+    Probably, you will find another script that can work with the main Swagger-UI script specified by the ``:url:`` option.
 
 .. note:: This package contains ``petstore.yaml`` and ``swagger-ui.css`` files (mentioned in the above example)
    copied to the ``_static/swaggerui/`` folder during the first use of the directive by Sphinx.

@@ -37,9 +37,13 @@ the OpenAPI format. The path must be relative to the document containing this di
 
 The directive uses the following options:
 
-*   **url** refers to a CDN-based (Content Delivery Network) Swagger-UI package.
+*   **url** refers to a CDN-based (Content Delivery Network) Swagger-UI package. For a proper version of the script, refer
+    to the [UNPKG](https://unpkg.com/browse/swagger-ui-dist/) CDN. The script name must be **swagger-ui-bundle.js**.
 *   **css** refers to a local Swagger-UI CSS file. The path must be relative to the document containing the directive.
-*   **script** refers to the additional script (the one in the above example is recommended).
+    You can find a proper CSS file in the [UNPKG](https://unpkg.com/browse/swagger-ui-dist/) CDN.
+*   **script** refers to the additional script (the one in the above example is recommended). For a proper version of the script, refer
+    to the [UNPKG](https://unpkg.com/browse/swagger-ui-dist/) CDN. The script name must be **swagger-ui-standalone-preset.js**.
+    Probably, you will find another script that can work with the main Swagger-UI script specified by the **:url:** option.
 
 
 This package contains **petstore.yaml** and **swagger-ui.css** files (mentioned in the above example)
