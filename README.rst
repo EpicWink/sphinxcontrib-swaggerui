@@ -13,7 +13,7 @@ Overview
 
 This Sphinx extension is necessary for those who publish an interactive document presenting their API specification
 compliant with OpenAPI and want to use the well-known Swagger-UI tool for this purpose.
-The ``swaggerui`` directive enables you to embed such interactive panel in an arbitrary place of an reST file.
+The ``swaggerui`` directive enables you to embed such interactive panel in an arbitrary place of a reST file.
 
 Sphinx Directive swaggerui
 ==========================
@@ -58,14 +58,17 @@ The directive uses the following options:
    to the `UNPKG <https://unpkg.com/browse/swagger-ui-dist/>`_ CDN. The script name must be ``swagger-ui-bundle.js``.
 *  ``css`` refers to a local Swagger-UI CSS file. The path must be relative to the document containing the directive.
    You can find a proper CSS file in the `UNPKG <https://unpkg.com/browse/swagger-ui-dist/>`_ CDN.
-*  ``script`` refers to an additional script (the one in the above example is recommended). For a proper version of the script, refer
-    to the `UNPKG <https://unpkg.com/browse/swagger-ui-dist/>`_ CDN. The script name must be ``swagger-ui-standalone-preset.js``.
-    Probably, you will find another script that can work with the main Swagger-UI script specified by the ``:url:`` option.
+*  ``script`` refers to an additional script (the one in the above example is recommended). For a proper version of
+   the script, refer to the `UNPKG <https://unpkg.com/browse/swagger-ui-dist/>`_ CDN. The script name must
+   be ``swagger-ui-standalone-preset.js``. Probably, you will find another script that can work with the main
+   Swagger-UI script specified by the ``:url:`` option.
 
-.. note:: This package contains ``petstore.yaml`` and ``swagger-ui.css`` files (mentioned in the above example)
+.. note:: 1. This package contains ``petstore.yaml`` and ``swagger-ui.css`` files (mentioned in the above example)
    copied to the ``_static/swaggerui/`` folder during the first use of the directive by Sphinx.
-   So don't care about copying these files when you specify the relative path to that folder;
-   the sample files will appear automatically in it whether you use them or not.
+   So don't care about copying these files when you specify the relative path to that folder; the sample files
+   will appear automatically in it whether you use them or not.
+
+   2. You will probably need to edit the CSS styles using your own CSS files.
 
 
 Links
