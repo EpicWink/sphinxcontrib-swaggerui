@@ -51,6 +51,22 @@ copied to the **_static/swaggerui/** folder during the first use of the directiv
 So don't care about copying these files when you specify the relative path to that folder;
 the sample files will appear automatically in it whether you use them or not.
 
+
+## Sample CSS Customization
+
+Avoid the operation block tag to disappear:
+
+    h4.opblock-tag a.nostyle {
+        opacity: 1
+    }
+
+Remove the Swagger top-bar:
+
+    .swagger-ui .topbar {
+        display: none;
+    }
+
+
 ## Links
 
 *   Source: [Bitbucket](https://bitbucket.org/albert_bagdasaryan/sphinxcontrib-swaggerui/)

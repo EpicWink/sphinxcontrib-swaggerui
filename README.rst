@@ -71,6 +71,22 @@ The directive uses the following options:
    2. You will probably need to edit the CSS styles using your own CSS files.
 
 
+Sample CSS Customization
+========================
+
+Avoid the operation block tag to disappear::
+
+   h4.opblock-tag a.nostyle {
+      opacity: 1
+   }
+
+Remove the Swagger top-bar::
+
+   .swagger-ui .topbar {
+      display: none;
+   }
+
+
 Links
 =====
 
