@@ -5,11 +5,18 @@
     :copyright: Copyright 2019 by Albert Bagdasaryan <albert.bagd@gmail.com>
     :license: BSD, see LICENSE for details.
 """
+
+
 from sphinx.application import Sphinx
+from sphinx.testing.path import path
 import textwrap
 import pytest
 
 pytest_plugins = 'sphinx.testing.fixtures'
+
+@pytest.fixture(scope='session')
+def rootdir():
+    return path(__file__).parent.abspath() / 'roots'
 
 def _format_option_raw(key, val):
     if isinstance(val, bool) and val:

@@ -1,13 +1,16 @@
 #!/usr/bin/env python
 
+import os
 import setuptools
 
+with open(os.path.join(os.path.dirname(__file__), 'README.rst'), 'r', encoding='utf-8') as f:
+    long_description = f.read()
 
 setuptools.setup(
     name="sphinxcontrib-swaggerui",
-    version="0.0.6",
+    version="0.0.8",
     description="Provides the swaggerui directive for reST files to build an interactive HTML page with your OpenAPI specification document.",
-    long_description="README.md",
+    long_description=long_description,
     license='BSD',
     author="Albert Bagdasaryan",
     author_email="albert.bagd@gmail.com",
