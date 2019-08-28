@@ -27,9 +27,9 @@ The directive also implies that you use the static content in the **_static/** f
 
 Use the following sample configuration when testing the directive for the first time:
 
-    .. swaggerui:: ../_static/swagger/petstore.yaml                                 # *) Required
+    .. swaggerui:: ../_static/swaggerui/petstore.yaml                                 # *) Required
        :url: https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js               # *) Required
-       :css: ../_static/swagger/swagger-ui.css                                      # *) Required
+       :css: ../_static/swaggerui/swagger-ui.css                                      # *) Required
        :script: https://unpkg.com/swagger-ui-dist@3/swagger-ui-standalone-preset.js # Optional
 
 An attribute (for example, **../_static/swagger/petstore.yaml**) refers to your local YAML or JSON file in
