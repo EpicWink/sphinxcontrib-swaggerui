@@ -1,5 +1,5 @@
-Provides the swaggerui directive for reST files to build an interactive driven
-by [Swagger-UI](https://swagger.io/tools/swagger-ui/) panel presenting
+Provides the **swaggerui** directive for reST files to build a driven
+by [Swagger-UI](https://swagger.io/tools/swagger-ui/) interactive panel presenting
 your [OpenAPI](https://swagger.io/resources/open-api/) specification document.
 
 ---
@@ -12,7 +12,7 @@ your [OpenAPI](https://swagger.io/resources/open-api/) specification document.
 
 ### Configuration
 
-In your project **config.py**, add the installed extension:
+In your project **conf.py**, add the installed extension:
 
     extensions = [...,
         'sphinxcontrib.swaggerui',
@@ -70,4 +70,4 @@ Remove the Swagger top-bar:
 ## Links
 
 *   Source: [Bitbucket](https://bitbucket.org/albert_bagdasaryan/sphinxcontrib-swaggerui/)
-*   Bugs and issues: [Issues](https://github.com/sphinx-contrib/sphinxcontrib-swaggerui/issues)
+

@@ -4,8 +4,8 @@ sphinxcontrib-swaggerui
 .. image:: https://travis-ci.org/sphinx-contrib/sphinxcontrib-swaggerui.svg?branch=master
    :target: https://travis-ci.org/sphinx-contrib/sphinxcontrib-swaggerui
 
-Provides the ``swaggerui`` directive for reST files to build an interactive driven
-by `Swagger-UI <https://swagger.io/tools/swagger-ui/>`_ panel presenting
+Provides the ``swaggerui`` directive for reST files to build a driven
+by `Swagger-UI <https://swagger.io/tools/swagger-ui/>`_ interactive panel presenting
 your `OpenAPI <https://swagger.io/resources/open-api>`_ specification document.
 
 Overview
@@ -28,7 +28,7 @@ Installation
 Configuration
 -------------
 
-In your Sphinx project configuration file ``config.py``, add the installed extension::
+In your Sphinx project configuration file ``conf.py``, add the installed extension::
 
     extensions = [...,
         'sphinxcontrib.swaggerui',
@@ -63,10 +63,12 @@ The directive uses the following options:
    be ``swagger-ui-standalone-preset.js``. Probably, you will find another script that can work with the main
    Swagger-UI script specified by the ``:url:`` option.
 
-.. note:: 1. This package contains ``petstore.yaml`` and ``swagger-ui.css`` files (mentioned in the above example)
-   copied to the ``_static/swaggerui/`` folder during the first use of the directive by Sphinx.
-   So don't care about copying these files when you specify the relative path to that folder; the sample files
-   will appear automatically in it whether you use them or not.
+.. note::
+
+   1. This package contains ``petstore.yaml`` and ``swagger-ui.css`` files (mentioned in the above example)
+      copied to the ``_static/swaggerui/`` folder during the first use of the directive by Sphinx.
+      So don't care about copying these files when you specify the relative path to that folder; the sample files
+      will appear automatically in it whether you use them or not.
 
    2. You will probably need to edit the CSS styles using your own CSS files.
 
@@ -91,4 +93,7 @@ Links
 =====
 
 - Source: `Bitbucket <https://bitbucket.org/albert_bagdasaryan/sphinxcontrib-swaggerui/>`_
-- Bugs and issues: `Issues <https://github.com/sphinx-contrib/sphinxcontrib-swaggerui/issues>`_
+
+.. commented:
+
+   - Bugs and issues: `Issues <https://github.com/sphinx-contrib/sphinxcontrib-swaggerui/issues>`_
