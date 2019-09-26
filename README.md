@@ -92,7 +92,10 @@ does some other makeups:
 
 This is how a section looks like with the above CSS:
 
+![Image](./images/petstore-styled.png =600x)
+
 <img src="images/petstore-styled.png" width="600"/>
+
 
 
 ## Links
