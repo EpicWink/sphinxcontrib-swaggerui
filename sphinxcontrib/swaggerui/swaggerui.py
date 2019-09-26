@@ -31,10 +31,12 @@ MODULE_DIR = os.path.dirname(os.path.abspath(__file__))     # Absolute path to t
 SWAGGER_CACHE_DIR = '_static/swaggerui'  # Relative to the folder with the static content
 
 # Default argument and options:
+DOM_NODE_ID = "swagger-ui"
 SPEC_PATH = SWAGGER_CACHE_DIR + "/petstore.yaml"
 SWAGGER_URL = "https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"
 OPT_SCRIPT = "https://unpkg.com/swagger-ui-dist@3/swagger-ui-standalone-preset.js"
 CSS_PATH = SWAGGER_CACHE_DIR + "/swagger-ui.css"
+OPT_FILTER = ""
 
 def copyfile(directive, source, dest):
     """Copy the source file if its copy does not exist on the the destination path
@@ -56,12 +58,13 @@ def validate_url(directive, url):
 
 
 class SwaggeruiDirective(SphinxDirective):
-    required_arguments = 1          # Path to the Spec YAML file - first line, after ::
-    optional_arguments = 0          # No more arguments allowed in the line after ::
-    option_spec = {                 # Options marked with :option: <value> on the lines after the first line
-        'url': directives.uri,      # (Required) URL of the Swagger-UI JavaScript file in a CDN
-        'css': directives.path,     # (Required) Path to the CSS file
-        'script': directives.unchanged  # Additional script: URL to the script in a CDN
+    required_arguments = 1              # Path to the Spec YAML file - first line, after ::
+    optional_arguments = 0              # No more arguments allowed in the line after ::
+    option_spec = {                     # Options marked with :option: <value> on the lines after the first line
+        'url': directives.uri,          # (Required) URL of the Swagger-UI JavaScript file in a CDN
+        'css': directives.path,         # (Required) Path to the CSS file
+        'script': directives.unchanged, # Additional script: URL to the script in a CDN
+        'filter': directives.unchanged  # Filter to select the content by tags
     }
     has_content = False
 
@@ -104,13 +107,22 @@ class SwaggeruiDirective(SphinxDirective):
         if "script" in self.options:
             opt_script = validate_url(self, self.options["script"])
 
+        # Optional filter:
+        opt_filter = OPT_FILTER     # Default script if none is specified in the directive
+        if "filter" in self.options:
+            opt_filter = self.options["filter"]
+
         # Get the Window.Onload() function from the file and substitute the placeholders:
         with open(MODULE_DIR + "/content.txt") as f:
             text = f.read()
-        text = text.replace('url: url', 'url: "%s"' % spec_path)\
-            .replace('href=css-path', 'href="%s"' % css_path)\
-            .replace('src=swagger-url', 'src="%s"' % swagger_url)\
-            .replace('src=opt-script', 'src="%s"' % opt_script)
+
+            text = text.replace('swagger-ui', DOM_NODE_ID + '-' + str(env.new_serialno()))\
+                .replace('url: url', 'url: "%s"' % spec_path)\
+                .replace('href=css-path', 'href="%s"' % css_path)\
+                .replace('src=swagger-url', 'src="%s"' % swagger_url)\
+                .replace('src=opt-script', 'src="%s"' % opt_script)\
+                .replace('filter: true', 'filter: "%s"' % opt_filter)
+
 
         raw_node = nodes.raw(text=text, format='html')
         (raw_node.source, raw_node.line) = self.state_machine.get_source_and_line(self.lineno)
