@@ -34,4 +34,10 @@ setuptools.setup(
         "Topic :: Utilities"
     ],
     namespace_packages=['sphinxcontrib'],
+    install_requires=[
+        'pbr',
+        'requests',
+        'docutils',
+        'sphinx',
+    ],
 )
