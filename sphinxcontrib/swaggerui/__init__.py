@@ -18,7 +18,8 @@ if False:
     from sphinx.application import Sphinx  # noqa
 
 __version__ = pbr.version.VersionInfo(
-    'swaggerui').version_string()
+    'sphinxcontrib-swaggerui',
+).version_string()
 
 
 def setup(app):
